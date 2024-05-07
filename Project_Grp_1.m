@@ -307,7 +307,7 @@ uDisp= uDisp + KG\f_trac;
        
     end
     if(nin==26) %If the condition 'nin==26' is met the requirement,Copy the actual values of stress and displacement for each element into their respective required fields.
-       uglobal = uDisp
+       uglobal = uDisp*10 %scale up by multiple 10
         for i = 1:NE
             ELEMENT(i).u_req = ELEMENT(i).u;                               % Displacement in x, y, and z directions
             ELEMENT(i).stress_x_req = ELEMENT(i).Actual_stress_x;          % Stress in the x-direction
